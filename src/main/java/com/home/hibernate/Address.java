@@ -11,10 +11,10 @@ public class Address implements Serializable{
     private static final long serialVersionUID = 1L;
 
     @Column(name = "country")
-    private String country;
+    String country;
 
     @Column(name = "mobileNumber")
-    private Long mobile;
+    Long mobile;
 
     public String getCountry() {
         return country;
