@@ -17,7 +17,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 @Table(name = "addressdetails")
 @NamedQueries({@NamedQuery(name="GETALLADDRESS",query="from AddressDetail")})
 @NamedNativeQueries({@NamedNativeQuery(name="GETALLADDRESSNATIVE",query="select * from addressdetails"),@NamedNativeQuery(name="GETSTREETADDRESSNATIVE",query="select street,version from addressdetails")})
-//@Cache(usage=CacheConcurrencyStrategy.READ_ONLY, region="addressDetail")
+@Cache(usage=CacheConcurrencyStrategy.READ_ONLY, region="addressDetail")
 public class AddressDetail {
 
     @EmbeddedId

@@ -15,16 +15,27 @@
 		<property name="password" value="root" />
 	</bean>
 
-<!-- Hibernate 3 Annotation SessionFactory Bean definition-->
+	<!-- Hibernate 3 Annotation SessionFactory Bean definition -->
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="annotatedClasses">
 			<list>
-				<value>com.hibernate.model.Employee</value>
+				<!-- <value>com.hibernate.model.Employee</value> -->
 				<value>com.hibernate.enums.Gender</value>
 				<value>com.home.hibernate.UserDetails</value>
 				<value>com.home.hibernate.AddressDetail</value>
+				<!-- <value>Chapter2.Person</value>
+				<value>Chapter2.Employee</value> -->
+				<!-- <value>Chapter3.Person2</value>
+				<value>Chapter3.Employee2</value>  -->
+				<value>Chapter4.Person3</value>
+				<value>Chapter4.Employee3</value> 
+				<value>Chapter5.Car</value> 
+				<value>Chapter5.CarDetail</value> 
+				<value>Chapter6.Company</value> 
+				<value>Chapter6.Manager</value> 
+				<value>Chapter6.Student</value> 
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -35,11 +46,13 @@
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
 				<prop key="hibernate.enable_lazy_load_no_trans">false</prop>
 				<prop key="hibernate.cache.use_second_lavel_cache">true</prop>
-				<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</prop>
+				<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory
+				</prop>
+				<!-- <prop key="net.sf.ehcache.configurationResourceName">/myehcache.xml</prop> -->
 			</props>
 		</property>
 	</bean>
-	
+
 	<context:component-scan base-package="com.hibernate.dao.impl" />
-	
+
 </beans>
